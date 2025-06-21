@@ -58,7 +58,10 @@
                 <label for="living_area">Living Area (sqm)</label>
                 <field name='living_area' class="oe_inline" />
               </div>
-              <!-- <field name="???" string='Facades' /> -->
+              <div>
+                <label for="facades">Facades</label>
+                <field name="facades" />
+              </div>
               <div>
                 <label for="garage">Garage</label>
                 <field name="garage" />
