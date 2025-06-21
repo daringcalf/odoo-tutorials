@@ -51,3 +51,11 @@ class EstateProperty(models.Model):
         "res.users", string="Salesman", default=lambda self: self.env.user
     )
     buyer_id = fields.Many2one("res.partner", string="Buyer", copy=False)
+
+
+class EstatePropertyType(models.Model):
+    _name = "estate.property.type"
+    _description = "Property Types"
+
+    name = fields.Char(required=True)
+
