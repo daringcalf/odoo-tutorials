@@ -35,9 +35,11 @@
 
           <div class=''>
             <group>
+              <field name="property_type_id" string='Property Type' />
               <field name="postcode" />
               <field name='date_availability' string='Available From' />
             </group>
+
             <group>
               <field name="expected_price" />
               <field name="selling_price" />
@@ -77,6 +79,17 @@
               <div>
                 <label for="garden_orientation">Garden Orientation</label>
                 <field name="garden_orientation" />
+              </div>
+            </page>
+
+            <page string="Other Info">
+              <div>
+                <label for="salesman_id">Salesman</label>
+                <field name="salesman_id" />
+              </div>
+              <div>
+                <label for="buyer_id">Buyer</label>
+                <field name="buyer_id" />
               </div>
             </page>
           </notebook>
