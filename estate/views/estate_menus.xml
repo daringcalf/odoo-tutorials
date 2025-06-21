@@ -6,9 +6,11 @@
     </menuitem>
   </menuitem>
 
-  <menuitem id="estate_menu_root" name="Real Estate">
-    <menuitem id="estate_menu_property_settings" name="Settings">
-      <menuitem id='estate_menu_property_type_view' action='estate_property_type_view_action' />
-    </menuitem>
-  </menuitem>
+  <menuitem id="estate_menu_property_settings" name="Settings" parent="estate_menu_root" />
+
+  <menuitem id="estate_menu_property_type_view" name="Property Types"
+    parent="estate_menu_property_settings" action="estate_property_type_view_action" />
+
+  <menuitem id="estate_menu_property_tag_view" name="Property Tags"
+    parent="estate_menu_property_settings" action="estate_property_tag_view_action" />
 </odoo>
