@@ -84,6 +84,10 @@
               </div>
             </page>
 
+            <page string="Offers">
+              <field name="offer_ids" />
+            </page>
+
             <page string="Other Info">
               <div>
                 <label for="salesman_id">Salesman</label>
