@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from odoo import models, fields, api
-from exceptions import UserError
+from odoo.exceptions import UserError
 
 
 class EstateProperty(models.Model):
