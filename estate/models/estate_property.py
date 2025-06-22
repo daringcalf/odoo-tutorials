@@ -155,3 +155,16 @@ class EstatePropertyOffer(models.Model):
                 ).days
             else:
                 offer.validity = 7
+
+    # Actions
+    def action_accept_offer(self):
+        for offer in self:
+            offer.status = "accepted"
+            offer.property_id.state = "offer_accepted"
+            offer.property_id.buyer_id = offer.partner_id
+            offer.property_id.selling_price = offer.price
+
+    def action_refuse_offer(self):
+        for offer in self:
+            offer.status = "refused"
+            offer.status = "refused"
