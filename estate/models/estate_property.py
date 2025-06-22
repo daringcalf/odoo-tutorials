@@ -92,6 +92,20 @@ class EstateProperty(models.Model):
                 raise UserError("sold properties cannot be cancelled")
             property.state = "cancelled"
 
+    # Constraints
+    _sql_constraints = [
+        (
+            "check_expected_price_strictly_positive",
+            "CHECK(expected_price > 0)",
+            "The expected price must be strictly positive.",
+        ),
+        (
+            "check_selling_price_positive",
+            "CHECK(selling_price >= 0)",
+            "The selling price must be positive.",
+        ),
+    ]
+
 
 class EstatePropertyType(models.Model):
     _name = "estate.property.type"
@@ -105,6 +119,15 @@ class EastatePropertyTag(models.Model):
     _description = "Property Tag"
 
     name = fields.Char(required=True)
+
+    # Constraints
+    _sql_constraints = [
+        (
+            "check_name_unique",
+            "unique(name)",
+            "The tag name must be unique.",
+        )
+    ]
 
 
 class EstatePropertyOffer(models.Model):
@@ -169,3 +192,12 @@ class EstatePropertyOffer(models.Model):
         for offer in self:
             offer.status = "refused"
             offer.status = "refused"
+
+    # Constraints
+    _sql_constraints = [
+        (
+            "check_price_strictly_positive",
+            "CHECK(price > 0)",
+            "The offer price must be strictly positive.",
+        )
+    ]
