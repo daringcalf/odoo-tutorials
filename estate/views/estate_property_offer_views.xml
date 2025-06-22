@@ -7,6 +7,8 @@
       <list>
         <field name="price" />
         <field name="partner_id" string='Partner' />
+        <field name="validity" string='Validity (days)' />
+        <field name="date_deadline" string='Deadline' />
         <field name="status" />
       </list>
     </field>
@@ -25,6 +27,14 @@
           <div>
             <label for="partner_id">Partner</label>
             <field name="partner_id" />
+          </div>
+          <div>
+            <label for="validity">Validity (days)</label>
+            <field name="validity" />
+          </div>
+          <div>
+            <label for="date_deadline">Deadline</label>
+            <field name="date_deadline" />
           </div>
           <div>
             <label for="status">Status</label>
