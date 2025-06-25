@@ -7,6 +7,7 @@ from odoo.tools.float_utils import float_compare, float_is_zero
 class EstateProperty(models.Model):
     _name = "estate.property"
     _description = "Properties"
+    _order = "id desc"
 
     name = fields.Char(required=True)
     description = fields.Text()
@@ -128,8 +129,10 @@ class EstateProperty(models.Model):
 class EstatePropertyType(models.Model):
     _name = "estate.property.type"
     _description = "Property Types"
+    _order = "sequence, name"
 
     name = fields.Char(required=True)
+    sequence = fields.Integer(default=1)
 
     # Relationships
     property_ids = fields.One2many(
@@ -140,6 +143,7 @@ class EstatePropertyType(models.Model):
 class EastatePropertyTag(models.Model):
     _name = "estate.property.tag"
     _description = "Property Tag"
+    _order = "name"
 
     name = fields.Char(required=True)
 
@@ -156,6 +160,7 @@ class EastatePropertyTag(models.Model):
 class EstatePropertyOffer(models.Model):
     _name = "estate.property.offer"
     _description = "Property Offer"
+    _order = "price desc"
 
     price = fields.Float()
     status = fields.Selection(
